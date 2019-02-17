@@ -48,7 +48,7 @@ client.on('message',async message => {
   if(message.content.startsWith(prefix + "setcount")) {
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('**YOU DONT HAVE MANAGE_CHANNELS ROLE**');
   if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('**THIS BOT DOSENT HAVE MANAGE_CHANNELS ROLE**');
-  message.channel.send('✅ | **DONE !! : (CHANNEL VOICE WAS CREATED WITH MEMBERS COUNT)**');
+  message.channel.send('✅ | **DONE ! : (CHANNEL VOICE WAS CREATED WITH MEMBERS COUNT)**');
   message.guild.createChannel(`Members Count : [ ${message.guild.members.size} ]` , 'voice').then(c => {
     console.log(`Count Members channel setup for guild: \n ${message.guild.name}`);
     c.overwritePermissions(message.guild.id, {
@@ -67,7 +67,7 @@ client.on('message',async message => {
   if(message.content.startsWith(prefix + "settime")) {
   if(!message.guild.member(message.author).hasPermission('MANAGE_CHANNELS')) return message.reply('**YOU DONT HAVE MANAGE_CHANNELS ROLE**');
   if(!message.guild.member(client.user).hasPermission(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('**THIS BOT DOSENT HAVE MANAGE_CHANNELS ROLE**');
-  message.channel.send('✅ | **DONE !! : (CHANNEL VOICE WAS CREATED WITH TIME COUNT)**');
+  message.channel.send('✅ | **DONE ! : (CHANNEL VOICE WAS CREATED WITH TIME COUNT)**');
   message.guild.createChannel("🕐 - Time  00", 'voice').then((c) => {
     console.log(`Time channel setup for guild: \n ${message.guild.name}`);
     c.overwritePermissions(message.guild.id, {
@@ -114,7 +114,7 @@ client.on('message',async message => {
       week = currentTime.getDay();
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('**YOU DONT HAVE MANAGE_CHANNELS ROLE**');
   if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('**THIS BOT DOSENT HAVE MANAGE_CHANNELS ROLE**');
-  message.channel.send('✅ | **DONE !! : (CHANNEL VOICE WAS CREATED WITH DATE COUNT)**');
+  message.channel.send('✅ | **DONE ! : (CHANNEL VOICE WAS CREATED WITH DATE COUNT)**');
   message.guild.createChannel("📅 - Date " + "「" + day + "-" + month + "-" + years + "」" , 'voice').then(c => {
     console.log(`Date channel setup for guild: \n ${message.guild.name}`);
     c.overwritePermissions(message.guild.id, {
@@ -133,7 +133,7 @@ client.on('message',async message => {
     if(message.content.startsWith(prefix + "setdays")) {
     if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('**YOU DONT HAVE MANAGE_CHANNELS ROLE**');
     if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('**THIS BOT DOSENT HAVE MANAGE_CHANNELS ROLE**');
-    message.channel.send('✅ | **DONE !! : (CHANNEL VOICE WAS CREATED WITH DAYS COUNT)**');
+    message.channel.send('✅ | **DONE ! : (CHANNEL VOICE WAS CREATED WITH DAYS COUNT)**');
     message.guild.createChannel(`Day : ${moment().format('dddd')}` , 'voice').then(c => {
       console.log(`Day channel setup for guild: \n ${message.guild.name}`);
       c.overwritePermissions(message.guild.id, {
