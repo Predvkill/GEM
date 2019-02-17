@@ -1,2 +1,2 @@
 # Aika
-Discord Bot By Predvkill
+FIGHT FOR USERS
