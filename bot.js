@@ -248,10 +248,10 @@ client.on('message', message => {
 :zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap
 
 ● The DamNation™ - Official :copyright: **`);
-
- **`);
-
+     
 message.author.sendEmbed(embed)
+
   }
 });
+
 client.login(process.env.BOT_TOKEN);
