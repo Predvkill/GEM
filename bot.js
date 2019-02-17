@@ -4,7 +4,6 @@ const prefix = "+"
 const yourID = "480540559233122324"
 const setupCMD = "!createrolemessage"
 
-console.log(`Logged in as ${client.user.tag}!`);
 client.on('ready', function(){
   client.user.setStatus("dnd");
     var ms = 10000 ;
