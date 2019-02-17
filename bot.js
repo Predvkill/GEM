@@ -249,8 +249,6 @@ client.on('message', message => {
 
 ● The DamNation™ - Official :copyright: **`);
      
-message.author.sendEmbed(embed)
-
   }
 });
 
