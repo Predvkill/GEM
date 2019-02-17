@@ -4,10 +4,24 @@ const prefix = "+"
 const yourID = "480540559233122324"
 const setupCMD = "!createrolemessage"
 
-client.on('ready', () => {
 console.log(`Logged in as ${client.user.tag}!`);
-client.user.setStatus("dnd")
-client.user.setGame(`★ TheDamNation™ ★`,"http://twitch.tv/TheRealPredvkill")
+client.on('ready', function(){
+  client.user.setStatus("dnd");
+    var ms = 10000 ;
+    var setActivity = ['★ TG | Matrix ★','★ TDN™ | Server ★ ' ];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setActivity.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setActivity[i],`https://www.twitch.tv/TheRealPredvkill`);
+    }, ms);
+});
 
   console.log('')
   console.log('')
@@ -18,7 +32,7 @@ client.user.setGame(`★ TheDamNation™ ★`,"http://twitch.tv/TheRealPredvkill
   console.log('╔[════════════════════════════════════]╗');
   console.log(`Logged in as * [ " ${client.user.username} " ]`);
   console.log('')
-  console.log('Informations :')
+  console.log('Gem Information :')
   console.log('')
   console.log(`servers! [ " ${client.guilds.size} " ]`);
   console.log(`Users! [ " ${client.users.size} " ]`);
@@ -26,7 +40,7 @@ client.user.setGame(`★ TheDamNation™ ★`,"http://twitch.tv/TheRealPredvkill
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
+  console.log(' Gem Is Online Now !')
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
@@ -139,36 +153,76 @@ client.on('message',async message => {
   });
 
 
-
-
-
 client.on('message', message => {
-  if (message.content === ('+aika')) {
-  message.channel.send({
-      embed: new Discord.RichEmbed()
-          .setAuthor(client.user.username,client.user.avatarURL)
-          .setThumbnail(client.user.avatarURL)
-          .setColor('RANDOM')
-          .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
-          .addField('**Servers**📚 :', [client.guilds.size], true)
-          .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
-          .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
-          .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
-          .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
-          .setFooter(message.author.username, message.author.avatarURL)
-  })
+  var prefix ="/";
+if(message.content.startsWith(prefix +"server")){
+if(!message.channel.guild) return message.reply('** :x: This Command Only For Servers :x:**');
+if(!message.channel.guild) return message.reply(' ');
+const millis = new Date().getTime() - message.guild.createdAt.getTime();
+const now = new Date();
+dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
+const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
+const days = millis / 1000 / 60 / 60 / 24;
+let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
+var embed  = new Discord.RichEmbed()
+.setAuthor(message.guild.name, message.guild.iconURL)
+.addField("**🆔 Server ID:**", message.guild.id,true)
+.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
+.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
+.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
+.addField("**🌍 Others **" , message.guild.region,true)
+.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
+.setColor('#000000')
+message.channel.sendEmbed(embed)
+
 }
 });
 
 
-
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+var version = '1.9';
+client.on('message', message => {
+    if (message.content.startsWith(prefix + "stats")) {
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``GEM STATS`` ')
+            .addField('``Uptime``', [timeCon(process.uptime())], true)
+            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``servers``', [client.guilds.size], true)
+            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
+            .addField('``Node``' , `[${process.version} ]` , true)
+                  .addField('``My Prefix``' , `+` , true)
+                  .addField('``My Language``' , `[ Java Script ]` , true)
+                  .setFooter('By | TheRareRanger')
+    })
+}
+});
 
 
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-    
-   message.channel.send('**:white_check_mark: DONE ! : (PLEASE CHECK MESSAGE PRIVATE)**');
+   if(!message.channel.guild) return message.reply('** :x: This Command Only For Servers :x:**');
+   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
    const embed = new Discord.RichEmbed() 
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
@@ -185,11 +239,15 @@ client.on('message', message => {
 
  :zap:  [❖═════ 𝙊𝙩𝙝𝙚𝙧 ═══════❖]  :zap: 
 
- +aika :arrow_right:  STATS BOT
+ +stats :arrow_right:  STATS BOT
  
-  :zap:  [❖═════ AikaBot ═══════❖]  :zap: 
+  :zap:  [❖═════ Gem - Bot ═══════❖]  :zap: 
 
- :fire: Aika Bot Made By : Predvkill :fire:
+ :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
+
+:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap
+
+● The DamNation™ - Official :copyright: **`);
 
  **`);
 
