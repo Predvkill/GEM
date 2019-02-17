@@ -222,6 +222,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
    if(!message.channel.guild) return message.reply('** :x: This Command Only For Servers :x:**');
+
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
    const embed = new Discord.RichEmbed() 
   .setAuthor(message.author.username,message.author.avatarURL)
@@ -249,6 +250,8 @@ client.on('message', message => {
 
 ● The DamNation™ - Official :copyright: **`);
      
+message.author.sendEmbed(embed)
+
   }
 });
 
