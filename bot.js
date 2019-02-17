@@ -30,7 +30,6 @@ client.on('ready', function(){
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
   console.log('')
   console.log('Gem Information :')
   console.log('')
