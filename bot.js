@@ -174,6 +174,11 @@ message.channel.sendEmbed(embed)
 }
 });
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`**💎 ${member} : [Please Wait "5 Minutes" To Receive Your Role Verified Member And See Other Channels...] - 🔰 • ${member.guild.name} Server • 🔰 💎**`)
+}).catch(console.error)
+})
 
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
