@@ -7,7 +7,7 @@ const setupCMD = "!createrolemessage"
 client.on('ready', function(){
   client.user.setStatus("dnd");
     var ms = 10000 ;
-    var setActivity = ['★ TG | Matrix ★','★ TDN™ | Server ★ ' ];
+    var setActivity = ['★ TDN™ | Matrix ★','★ TDN™ | Server ★ ' ];
     var i = -1;
     var j = 0;
     setInterval(function (){
