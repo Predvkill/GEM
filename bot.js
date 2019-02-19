@@ -149,9 +149,8 @@ client.on('message',async message => {
 
 
 client.on('message', message => {
-  var prefix ="+";
 if(message.content.startsWith(prefix +"server")){
-if(!message.channel.guild) return message.reply('** :x: This Command Only For Servers :x:**');
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **•# No Permissions**');
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
