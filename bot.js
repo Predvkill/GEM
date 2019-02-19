@@ -147,31 +147,24 @@ client.on('message',async message => {
     }
   });
 
-
 client.on('message', message => {
-if(message.content.startsWith(prefix +"server")){
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **•# No Permissions**');
-if(!message.channel.guild) return message.reply(' ');
-const millis = new Date().getTime() - message.guild.createdAt.getTime();
-const now = new Date();
-dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
-const days = millis / 1000 / 60 / 60 / 24;
-let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
-var embed  = new Discord.RichEmbed()
-.setAuthor(message.guild.name, message.guild.iconURL)
-.addField("**🆔 Server ID:**", message.guild.id,true)
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others **" , message.guild.region,true)
-.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
-.setColor('#000000')
-message.channel.sendEmbed(embed)
-
+  if (message.content === ('+Gem')) {
+  message.channel.send({
+      embed: new Discord.RichEmbed()
+          .setAuthor(client.user.username,client.user.avatarURL)
+          .setThumbnail(client.user.avatarURL)
+          .setColor('RANDOM')
+          .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+          .addField('**Servers**📚 :', [client.guilds.size], true)
+          .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
+          .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
+          .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
+          .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
+          .setFooter(message.author.username, message.author.avatarURL)
+  })
 }
 });
+
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
@@ -239,11 +232,9 @@ client.on('message', message => {
 
  :zap:  [❖═════ 𝙊𝙩𝙝𝙚𝙧 ═══════❖]  :zap: 
 
- +stats :arrow_right:  STATS BOT - (THIS COMMANDS FOR OWNER)
-
- +server :arrow_right: SERVER STATS - (THIS COMMANDS FOR OWNER)
+ +Gem :arrow_right: BOT STATS - (THIS COMMANDS FOR OWNER)
  
-  :zap:  [❖═════ Gem - Bot ═══════❖]  :zap: 
+  :zap:  [❖═════ GEM - BOT ═══════❖]  :zap: 
 
  :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
