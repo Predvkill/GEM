@@ -149,7 +149,7 @@ client.on('message',async message => {
 
 
 client.on('message', message => {
-  var prefix ="/";
+  var prefix ="+";
 if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return message.reply('** :x: This Command Only For Servers :x:**');
 if(!message.channel.guild) return message.reply(' ');
@@ -191,7 +191,7 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
-var version = '1.9';
+var version = '1.4';
 client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
@@ -240,7 +240,9 @@ client.on('message', message => {
 
  :zap:  [❖═════ 𝙊𝙩𝙝𝙚𝙧 ═══════❖]  :zap: 
 
- +stats :arrow_right:  STATS BOT
+ +stats :arrow_right:  STATS BOT - (THIS COMMANDS FOR OWNER)
+
+ +server :arrow_right: SERVER STATS - (THIS COMMANDS FOR OWNER)
  
   :zap:  [❖═════ Gem - Bot ═══════❖]  :zap: 
 
