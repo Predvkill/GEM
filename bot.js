@@ -97,7 +97,7 @@ client.on('message',async message => {
           hours = 24;
       }
 
-      c.setName(" Time :「" + hours + ":" + minutes + "」");
+      c.setName("Time :「" + hours + ":" + minutes + "」");
     },1000);
   });
   }
@@ -114,7 +114,7 @@ client.on('message',async message => {
       week = currentTime.getDay();
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply(':x: **YOU DONT HAVE MANAGE CHANNELS ROLE** :x:');
   if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply(':x: **THIS BOT DOSENT HAVE MANAGE CHANNELS ROLE** :x:');
-  message.channel.send('✅ | ``DONE ! : (CHANNEL VOICE WAS CREATED WITH DATE COUNT)`` ');
+  message.channel.send(' ``✅ | DONE ! : (CHANNEL VOICE WAS CREATED WITH DATE COUNT)`` ');
   message.guild.createChannel("📅 - Date " + "「" + day + "-" + month + "-" + years + "」" , 'voice').then(c => {
     console.log(`Date channel setup for guild: \n ${message.guild.name}`);
     c.overwritePermissions(message.guild.id, {
@@ -122,7 +122,7 @@ client.on('message',async message => {
       SPEAK: false
     });
     setInterval(function() {
-      c.setName("📅 - Date " + "「" + day + "-" + month + "-" + years + "」")
+      c.setName("Date : " + "「" + day + "-" + month + "-" + years + "」")
     },1000);
   });
   }
@@ -133,7 +133,7 @@ client.on('message',async message => {
     if(message.content.startsWith(prefix + "setdays")) {
     if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply(':x: **YOU DONT HAVE MANAGE CHANNELS ROLE** :x:');
     if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply(':x: **THIS BOT DOSENT HAVE MANAGE CHANNELS ROLE** :x:');
-    message.channel.send('✅ | ``DONE ! : (CHANNEL VOICE WAS CREATED WITH DAYS COUNT)`` ');
+    message.channel.send(' ``✅ | DONE ! : (CHANNEL VOICE WAS CREATED WITH DAYS COUNT)`` ');
     message.guild.createChannel(`Day : ${moment().format('dddd')}` , 'voice').then(c => {
       console.log(`Day channel setup for guild: \n ${message.guild.name}`);
       c.overwritePermissions(message.guild.id, {
@@ -141,7 +141,7 @@ client.on('message',async message => {
         SPEAK: false
       });
       setInterval(function() {
-        c.setName(`📅 - Day : 「${moment().format('dddd')}」`);
+        c.setName(`Day : 「${moment().format('dddd')}」`);
       },1000);
     });
     }
