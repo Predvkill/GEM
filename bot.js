@@ -6,6 +6,7 @@ const setupCMD = "!createrolemessage"
 
 
 client.on('ready', function(){//npm i ms 
+  client.user.setStatus("dnd")
     var ms = 10000 ;
     var setGame = [`★ TDN™ | MATRIX ★`,`★ CHANNELS : [${client.channels.size}] ★`,`★ THE DAMNATION ★`];
     var i = -1;
