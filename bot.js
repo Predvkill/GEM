@@ -144,16 +144,16 @@ client.on('message', message => {
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
             .setTitle('**🚀 [GEM] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
-	          .addField('``Bot Version :``' , `[ v1.1 ]` , true)
+	    .addField('``Bot Version :``' , `[ v1.1 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
-	          .addField('``Bot Name :``' , `★ GEM - 2077 ★` , true)
+	    .addField('``Bot Name :``' , `★ GEM - 2077 ★` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
             .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]`, true)
             .addField('``TG - Servers :``', [ client.guilds.size ] , true)
             .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
-	          .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
+	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
@@ -161,7 +161,7 @@ client.on('message', message => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
-	          .setDescription(`**:robot: ● Attention [The TDN™] Users 
+	          .setDescription(`**:robot: ● Attention [THE TDN™] Users 
 [GEM] Has Returned From The Darkness Aka Back Online
 It Must Be Your Lucky Day ! ● ** `)
 
@@ -172,7 +172,7 @@ It Must Be Your Lucky Day ! ● ** `)
 // ==================================================================
 
 client.on('ready', function(){
-client.channels.get("552138170012008469").send("-GEM IS BACK ONLINE NOW").then(m => m.delete(500));
+client.channels.get("529660118934224896").send("-GEM IS BACK ONLINE NOW").then(m => m.delete(500));
 		   
  });
 
