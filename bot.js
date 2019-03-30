@@ -409,7 +409,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed() 
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+  .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
   .addField('**Bot Owner** 👑 :' , `**[<@480540559233122324>]**`)
   .addField('**Bot Version** :robot: :' , `**[ v1.1 ]**`)
   .setThumbnail(client.user.avatarURL)
@@ -431,9 +431,7 @@ client.on('message', message => {
  
   :zap:  [❖═════ GEM - BOT ═══════❖]  :zap: 
 
- :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap**`);
+ :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: **`);
      
 message.author.sendEmbed(embed)
 
