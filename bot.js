@@ -172,7 +172,7 @@ It Must Be Your Lucky Day ! ● ** `)
 // ==================================================================
 
 client.on('ready', function(){
-client.channels.get("529660118934224896").send("-GEM IS BACK ONLINE NOW").then(m => m.delete(500));
+client.channels.get("529660118934224896").send("+GEM IS BACK ONLINE NOW").then(m => m.delete(500));
 		   
  });
 
