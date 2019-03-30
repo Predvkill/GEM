@@ -356,6 +356,22 @@ client.on('message',async message => {
 
 // ==================================================================
 
+client.on('guildCreate', guild => {
+    var embed = new Discord.RichEmbed()
+    .setThumbnail(client.user.avatarURL)
+    .setColor('RANDOM')
+    .setDescription(`:heart: **شكراً لك لإضافه البوت الى سيرفرك** :heart:`)
+    .addField('**Bot Version** :robot: :' , `**[ v1.1 ]**`)
+    .addField('**Bot CMD** 🔮 :' , `**Use +help For Bot Commands**`)
+    .addField('**Bot Owner** 👑 :' , `**[<@480540559233122324>]**`)
+    .addField('**Bot Name** 🔰 :' , `**[ ${client.user.tag} ]**`)
+    .setFooter('🔰 [ THE TDN™ - OFFICIAL ] 🔰')
+    .setTimestamp()
+        guild.owner.send(embed)
+  });
+
+// ==================================================================
+
 client.on('message', message => {
   if (message.content === ('+Gem')) {
   message.channel.send({
@@ -393,6 +409,11 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed() 
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
+  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+  .addField('**Bot Owner** 👑 :' , `**[<@480540559233122324>]**`)
+  .addField('**Bot Version** :robot: :' , `**[ v1.1 ]**`)
+  .setThumbnail(client.user.avatarURL)
+  .setTimestamp()
   .setDescription(`**
  :zap:  [❖═════ 𝙂𝙚𝙣𝙚𝙧𝙖𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ═══════❖]  :zap: 
 
@@ -412,9 +433,7 @@ client.on('message', message => {
 
  :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
-:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap
-
-● The DamNation™ - Official :copyright: **`);
+:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap**`);
      
 message.author.sendEmbed(embed)
 
