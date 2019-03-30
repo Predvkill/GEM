@@ -47,7 +47,7 @@ client.on('ready', function() {
 
 client.on("ready", async  => {
 client.setInterval(async function(){
-client.channels.get("546680636123906059").setName(`「🔰 THE DAMNATION™ 🔰`);
+client.channels.get("546680636123906059").setName(`「THE DAMNATION™`);
 client.channels.get("546680636123906059").setName(`「W`);
 client.channels.get("546680636123906059").setName(`「WE`);
 client.channels.get("546680636123906059").setName(`「WEL`);
@@ -57,7 +57,7 @@ client.channels.get("546680636123906059").setName(`「WELCOM`);
 client.channels.get("546680636123906059").setName(`「WELCOME`);
 client.channels.get("546680636123906059").setName(`「WELCOME T`);
 client.channels.get("546680636123906059").setName(`「WELCOME TO`);
-client.channels.get("546680636123906059").setName(`「★ T`);
+client.channels.get("546680636123906059").setName(`「T`);
 client.channels.get("546680636123906059").setName(`「TH`);
 client.channels.get("546680636123906059").setName(`「THE`);
 client.channels.get("546680636123906059").setName(`「THE D`);
@@ -69,7 +69,7 @@ client.channels.get("546680636123906059").setName(`「THE DAMNAT`);
 client.channels.get("546680636123906059").setName(`「THE DAMNATI`);
 client.channels.get("546680636123906059").setName(`「THE DAMNATIO`);
 client.channels.get("546680636123906059").setName(`「THE DAMNATION`);
-client.channels.get("546680636123906059").setName(`「THE DAMNATION™ ★」`);
+client.channels.get("546680636123906059").setName(`「THE DAMNATION™」`);
 
   }, 20000);
 });
