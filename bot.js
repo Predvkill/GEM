@@ -4,11 +4,12 @@ const prefix = "+"
 const yourID = "480540559233122324"
 const setupCMD = "!createrolemessage"
 
+// ==================================================================
 
 client.on('ready', function(){//npm i ms 
   client.user.setStatus("dnd")
     var ms = 10000 ;
-    var setGame = [`★ TDN™ | MATRIX ★`,`★ CHANNELS : [${client.channels.size}] ★`,`★ THE DAMNATION ★`];
+    var setGame = [`★ TDN™ | MATRIX ★`,`★ CHANNELS : [${client.channels.size}] ★`,`★ THE TDN™ ★`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -24,28 +25,228 @@ client.on('ready', function(){//npm i ms
 
 });
 
+// ==================================================================
 
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log('')
-  console.log('Gem Information :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Gem Is Online Now !')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
+////////////////// [ 🔰 CONSOL GEM LOGS 🔰 ] //////////////////
 
+client.on('warn', console.warn);
+
+client.on('error', console.error);
+
+client.on('disconnect', () => console.log('🔰 I Just Disconnected, Making SureYyou Know, I Will Reconnect Now... 🔰'));
+
+client.on('reconnecting', () => console.log('🔰 I Am Reconnecting Now ! 🔰'));
+
+client.on('ready', function() {
+
+    console.log(`🔰 [ ${client.user.username} ] : IS READY TO FIGHT NOW 🔰`);
+
+});
+
+// ==================================================================
+
+client.on("ready", async  => {
+client.setInterval(async function(){
+client.channels.get("543463470532788274").setName(`「THE DAMNATION™`);
+client.channels.get("543463470532788274").setName(`「W`);
+client.channels.get("543463470532788274").setName(`「WE`);
+client.channels.get("543463470532788274").setName(`「WEL`);
+client.channels.get("543463470532788274").setName(`「WELC`);
+client.channels.get("543463470532788274").setName(`「WELCO`);
+client.channels.get("543463470532788274").setName(`「WELCOM`);
+client.channels.get("543463470532788274").setName(`「WELCOME`);
+client.channels.get("543463470532788274").setName(`「WELCOME T`);
+client.channels.get("543463470532788274").setName(`「WELCOME TO`);
+client.channels.get("543463470532788274").setName(`「T`);
+client.channels.get("543463470532788274").setName(`「TH`);
+client.channels.get("543463470532788274").setName(`「THE`);
+client.channels.get("543463470532788274").setName(`「THE D`);
+client.channels.get("543463470532788274").setName(`「THE DA`);
+client.channels.get("543463470532788274").setName(`「THE DAM`);
+client.channels.get("543463470532788274").setName(`「THE DAMN`);
+client.channels.get("543463470532788274").setName(`「THE DAMNA`);
+client.channels.get("543463470532788274").setName(`「THE DAMNAT`);
+client.channels.get("543463470532788274").setName(`「THE DAMNATI`);
+client.channels.get("543463470532788274").setName(`「THE DAMNATIO`);
+client.channels.get("543463470532788274").setName(`「THE DAMNATION`);
+client.channels.get("543463470532788274").setName(`「THE DAMNATION™」`);
+
+  }, 20000);
+});
+
+// ================================================================
+
+ client.on('message', message => {
+    if(message.content === prefix + "shutdown") {
+	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
+            client.channels.get("529660118934224896").send({
+	    embed: new Discord.RichEmbed()
+	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('dc322f')
+	    .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [GEM] IS SHUTDOWN NOW BY THE OWNERS !**')
+	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+		    });
+            console.log(`${message.author.tag} [ ${message.author.id} ] GEM Has ShutDown Successfully.`);
+            setTimeout(() => {
+            client.destroy();
+            },3000);
+}
+});    
+
+// ==================================================================
+
+client.on('message', message => {
+    if(message.content === prefix + "restart") {
+	     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
+          client.channels.get("529660118934224896").send({
+	     embed: new Discord.RichEmbed()
+	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('YELLOW')
+	    .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [GEM] IS REBOOTING NOW !** ')
+	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+		 });
+	    console.log(`${message.author.tag} [ ${message.author.id} ] Gem Has Restarted Successfully.`);
+            console.log(`Gem Is Restarting Now..`);
+            setTimeout(() => {
+            client.destroy();
+            client.login(process.env.BOT_TOKEN);
+            },3000);
+
+}
+});
+
+// ==================================================================
+
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+var version = '1.1';
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "GEM IS BACK ONLINE NOW")) {
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('859900')
+            .setTitle('**🚀 [GEM] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
+	          .addField('``Bot Version :``' , `[ v1.1 ]` , true)
+            .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
+	          .addField('``Bot Name :``' , `★ GEM - 2077 ★` , true)
+            .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
+            .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
+            .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]`, true)
+            .addField('``TG - Servers :``', [ client.guilds.size ] , true)
+            .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
+            .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
+	          .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
+            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
+            .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
+            .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
+                  .addField('``Bot Prefix :``' , `👑 [ FOR ADMINS ] 👑` , true)
+                  .addField('``Bot Language :``' , `[ Java Script ]` , true)
+                  .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
+	          .setTimestamp()
+	          .setDescription(`**:robot: ● Attention [The TDN™] Users 
+[GEM] Has Returned From The Darkness Aka Back Online
+It Must Be Your Lucky Day ! ● ** `)
+
+    })
+}
+});
+
+// ==================================================================
+
+client.on('ready', function(){
+client.channels.get("552138170012008469").send("-GEM IS BACK ONLINE NOW").then(m => m.delete(500));
+		   
+ });
+
+// ==================================================================
+
+
+client.on("message", async message => {
+	
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	
+    const command = args.shift().toLowerCase();
+	
+    if(message.author.id != "480540559233122324") return;
+	
+    if(message.author.bot) return;
+	
+    if (command == "leaveserver") {
+	    
+        if(!args[0] || args[1]) return message.reply(`| Type : **${prefix}leaveserver & <guild_id>** | :x:`);
+	    	  
+        let GuildId = client.guilds.get(args[0])
+	
+        if(!GuildId) return message.reply(`**:x: | Guild "ID" Is Not Detected | :x:**`);
+	    
+        GuildId.leave().then(m => message.channel.send("Done | I Have Left : **["+GuildId.name+"]** Server | ✅"))
+    }     
+})
+
+// ==================================================================
+
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+var version = '1.1';
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "stats")) {
+ if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('859900')
+            .setTitle('**[GEM] STATS** ')
+	    .addField('``Bot Version :``' , `[ v1.1 ]` , true)
+	    .addField('``Bot Name :``' , `★ GEM - 2077 ★` , true)
+            .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
+            .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
+            .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
+            .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]` , true)
+            .addField('``TG - Servers :``', [ client.guilds.size ], true)
+            .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
+            .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
+	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
+            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
+            .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
+            .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
+                  .addField('``Bot Prefix :``' , `👑 [ + ] 👑` , true)
+                  .addField('``Bot Language :``' , `[ Java Script ]` , true)
+                  .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
+	          .setTimestamp()
+
+    })
+}
+});
+
+// ==================================================================
 
 client.on('message',async message => {
   if(message.content.startsWith(prefix + "setcount")) {
@@ -65,6 +266,7 @@ client.on('message',async message => {
   }
 });
 
+// ==================================================================
 
 client.on('message',async message => {
   if(message.content.startsWith(prefix + "settime")) {
@@ -106,7 +308,7 @@ client.on('message',async message => {
   }
 });
 
-
+// ==================================================================
 
 client.on('message',async message => {
   if(message.content.startsWith(prefix + "setdate")) {
@@ -131,6 +333,8 @@ client.on('message',async message => {
   }
 });
 
+// ==================================================================
+
 client.on('message',async message => {
   var moment = require('moment');
     if(message.content.startsWith(prefix + "setdays")) {
@@ -150,6 +354,8 @@ client.on('message',async message => {
     }
   });
 
+// ==================================================================
+
 client.on('message', message => {
   if (message.content === ('+Gem')) {
   message.channel.send({
@@ -168,6 +374,7 @@ client.on('message', message => {
 }
 });
 
+// ==================================================================
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
@@ -175,43 +382,7 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
-function timeCon(time) {
-    let days = Math.floor(time % 31536000 / 86400)
-    let hours = Math.floor(time % 31536000 % 86400 / 3600)
-    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
-    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
-    days = days > 9 ? days : '0' + days
-    hours = hours > 9 ? hours : '0' + hours
-    minutes = minutes > 9 ? minutes : '0' + minutes
-    seconds = seconds > 9 ? seconds : '0' + seconds
-    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
-}
-var version = '1.4';
-client.on('message', message => {
-    if (message.content.startsWith(prefix + "stats")) {
-    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
-    message.channel.send({
-        embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('RANDOM')
-            .setTitle('``GEM STATS`` ')
-            .addField('``Uptime``', [timeCon(process.uptime())], true)
-            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
-            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
-            .addField('``servers``', [client.guilds.size], true)
-            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
-            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
-            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
-            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-            .addField('``Node``' , `[${process.version} ]` , true)
-                  .addField('``My Prefix``' , `+` , true)
-                  .addField('``My Language``' , `[ Java Script ]` , true)
-                  .setFooter('By | TheRareRanger')
-    })
-}
-});
-
+// ==================================================================
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -250,4 +421,13 @@ message.author.sendEmbed(embed)
   }
 });
 
+// ==================================================================
+
 client.login(process.env.BOT_TOKEN);
+
+// ==================================================================
+
+ // THIS BOT [GEM] CREATED BY [THE RARE RANGER] - 2019© //
+////////////// 🔰 THE DAMNATION™ & THE GRID™ 🔰 //////////////
+
+// ==================================================================
