@@ -79,6 +79,12 @@ client.channels.get("546680636123906059").setName(`「THE DAMNATION™」`);
 client.on("ready", async  => {
 client.setInterval(async function(){
 client.channels.get("561746594743975947").setName(`「Discord.gg/PzbDJwx」`);
+client.channels.get("561746594743975947").setName(`「Discord.gg/PzbDJw」`);
+client.channels.get("561746594743975947").setName(`「Discord.gg/PzbDJ」`);
+client.channels.get("561746594743975947").setName(`「Discord.gg/PzbD」`);
+client.channels.get("561746594743975947").setName(`「Discord.gg/Pzb」`);
+client.channels.get("561746594743975947").setName(`「Discord.gg/Pz」`);
+client.channels.get("561746594743975947").setName(`「Discord.gg/P」`);	
 client.channels.get("561746594743975947").setName(`「Discord.gg/P」`);
 client.channels.get("561746594743975947").setName(`「Discord.gg/Pz」`);
 client.channels.get("561746594743975947").setName(`「Discord.gg/Pzb」`);
@@ -100,7 +106,7 @@ client.channels.get("561746594743975947").setName(`「Discord.gg/PzbDJ」`);
 client.channels.get("561746594743975947").setName(`「Discord.gg/PzbDJw」`);
 client.channels.get("561746594743975947").setName(`「Discord.gg/PzbDJwx」`);
 	
-  }, 20000);
+  }, 30000);
 });
 
 // ================================================================
