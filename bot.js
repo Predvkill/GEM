@@ -181,7 +181,7 @@ client.on('message', message => {
             .setTitle('**🚀 HI, IM BACK [ONLINE] NOW & [UPDATED] 🚀**')
 	    .addField('``Bot Version :``' , `[ v1.1 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
-	    .addField('``Bot Name :``' , `★ GEM - 2077 ★` , true)
+	    .addField('``Bot Full Name :``' , `★ GEM - 2077 ★` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
             .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]`, true)
@@ -196,9 +196,6 @@ client.on('message', message => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('● 🔰 [ THE TDN™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
-	          .setDescription(`**:robot: ● Attention [THE TDN™] Users 
-[GEM] Has Returned From The Darkness Aka Back Online
-It Must Be Your Lucky Day ! ● ** `)
 
     })
 }
@@ -260,7 +257,7 @@ client.on('message', message => {
             .setColor('859900')
             .setTitle('**[GEM] STATS** ')
 	    .addField('``Bot Version :``' , `[ v1.1 ]` , true)
-	    .addField('``Bot Name :``' , `★ GEM - 2077 ★` , true)
+	    .addField('``Bot Full Name :``' , `★ GEM - 2077 ★` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
