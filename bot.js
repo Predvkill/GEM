@@ -426,7 +426,7 @@ client.on('message', message => {
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**💎 ${member} : Please Wait "5 Minutes" To Receive Your Role : [Verified Member] And See [Other Channels] - 🔰 • ${member.guild.name} Server • 🔰 💎**`)
+  return channel.send(`**💎 Hello Dear ${member} , So We Just Finished Some Bot That Make Your Server Cool ! If You Interested Type In #use-commands-here⌨ : /invite - 🔰 • ${member.guild.name} Server • 🔰 💎**`)
 }).catch(console.error)
 })
 
